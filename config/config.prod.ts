@@ -22,5 +22,7 @@ export default () => {
         }
     }
 
+    console.log('config', config)
+
     return config;
 };

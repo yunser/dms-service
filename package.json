@@ -1,5 +1,5 @@
 {
-  "name": "apis-egg",
+  "name": "dms-egg",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,7 +8,7 @@
     "declarations": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=dms-egg",
+    "start": "egg-scripts start --daemon --title=dms-egg --env=prod --port=7020",
     "stop": "egg-scripts stop --title=dms-egg",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
