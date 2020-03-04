@@ -1,7 +1,9 @@
-import { EggAppConfig, PowerPartial } from 'egg';
+import { EggAppConfig, PowerPartial, EggAppInfo } from 'egg'
 
-export default () => {
-    const config: PowerPartial<EggAppConfig> = {};
+export default (appInfo: EggAppInfo) => {
+    const config: PowerPartial<EggAppConfig> = {}
+
+    config.keys = appInfo.name + '_1582774878129_167'
 
     config.cors = {
         origin: '*',
@@ -22,7 +24,7 @@ export default () => {
         }
     }
 
-    console.log('config', config)
+    console.log('prod config', config)
 
     return config;
 };

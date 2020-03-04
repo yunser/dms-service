@@ -4,7 +4,7 @@ export default class HomeController extends Controller {
 
     public async index() {
         const { ctx } = this
-        ctx.body = await ctx.service.test.sayHi('egg22')
+        ctx.body = await ctx.service.test.sayHi('dms-api v1.0.1')
     }
 
     public async about() {
