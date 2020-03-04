@@ -1,9 +1,10 @@
+/* eslint-diable */
 import { EggAppConfig, PowerPartial, EggAppInfo } from 'egg'
 
 export default (appInfo: EggAppInfo) => {
     const config: PowerPartial<EggAppConfig> = {}
 
-    config.keys = appInfo.name + '_1582774878129_167'
+    config.keys = appInfo.name + '_1582774878129_168'
 
     config.cors = {
         origin: '*',
@@ -19,7 +20,7 @@ export default (appInfo: EggAppInfo) => {
     config.cluster = {
         listen: {
             path: '',
-            port: 7020,
+            port: 7050,
             hostname: '0.0.0.0'
         }
     }

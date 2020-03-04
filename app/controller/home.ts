@@ -4,7 +4,11 @@ export default class HomeController extends Controller {
 
     public async index() {
         const { ctx } = this
-        ctx.body = await ctx.service.test.sayHi('dms-api v1.0.1')
+        ctx.body = {
+            desc: 'dms-api v1.0.1',
+            env: ctx.app.config.env,
+            config: ctx.app.config,
+        }
     }
 
     public async about() {

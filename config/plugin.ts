@@ -1,3 +1,4 @@
+/* eslint-diable */
 import { EggPlugin } from 'egg';
 
 const plugin: EggPlugin = {
