@@ -104,6 +104,12 @@ export default class MysqlController extends Controller {
         ctx.body = await this.query(sql)
     }
 
+    async execSql() {
+        const { ctx } = this
+        let { sql } = ctx.request.body
+        ctx.body = await this.query(sql)
+    }
+
     async users() {
         const { ctx } = this
         await this.connect()

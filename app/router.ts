@@ -17,4 +17,5 @@ export default (app: Application) => {
     router.get(`${mysqlPath}/databases/:dbName/tables/:tableName`, controller.mysql.tableDetail)
     // router.get(`${mysqlPath}/tables/:name`, controller.mysql.tableDetail)
     router.get(`${mysqlPath}/users`, controller.mysql.users)
+    router.post(`${mysqlPath}/execSql`, controller.mysql.execSql)
 }

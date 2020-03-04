@@ -7,7 +7,7 @@ export default class HomeController extends Controller {
         ctx.body = {
             desc: 'dms-api v1.0.1',
             env: ctx.app.config.env,
-            config: ctx.app.config,
+            // config: ctx.app.config,
         }
     }
 
