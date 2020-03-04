@@ -1,7 +1,12 @@
 import { Controller } from 'egg'
 import { createConnection } from 'mysql'
-
+// import { uuid } from 'uuid/v1'
+import { v4 as uuid } from 'uuid'
 let g_connection
+
+let connections = {}
+
+// console.log('uuid', uuid())
 
 export default class MysqlController extends Controller {
 
@@ -55,7 +60,7 @@ export default class MysqlController extends Controller {
                 }
                 g_connection = connection
                 // console.log('nonnect ok', connection)
-                resolve(connection.threadId)
+                resolve(connection)
             })
         })
     }
@@ -63,7 +68,15 @@ export default class MysqlController extends Controller {
     async connect() {
         const { ctx } = this
         console.log('connect', ctx.request.body)
-        ctx.body = await this._connect2(ctx.request.body)
+        let connection = await this._connect2(ctx.request.body)
+        let id = uuid()
+        connections[id] = {
+            id,
+            connection,
+            createTime: new Date().getTime(),
+            updateTime: new Date().getTime(),
+        }
+        ctx.body = id
     }
 
     async query(sql: string) : Promise<Array<any>> {
